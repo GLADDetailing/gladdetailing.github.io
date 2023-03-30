@@ -1,0 +1,131 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>GLAD Detailing</title>
+    <link rel="stylesheet" href="styles.css"/>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+</head>
+<body>
+  <!--Navbar section-->
+    <nav class="navbar">
+        <div class="navbar__container">
+          <div class="logo-and-bubble">
+            <img id="main__imgB" src="bubble.png"/>
+            <a href="index.html" id="navbar__logo"><i class="fa-gem"></i>GLAD</a>
+          </div>
+          <div class="navbar__toggle" id="mobile-menu">
+            <span class="bar"></span> 
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+          <ul class="navbar__menu">
+            <li class="navbar__item">
+              <a href="index.html" class="navbar__links">Home</a>
+            </li>
+            <li class="navbar__item">
+              <a href="gallery.html" class="navbar__links">Gallery</a>
+            </li>
+            <li class="navbar__item">
+              <button type="packages" class="pck" onclick="openPopup()">Packages</button>
+            </li>
+            <li class="navbar__btn">
+              <button class="nav__btn">
+                <a href="tel:5615077747" class="button">Call Us</a>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      
+      <div class="popup" id="popup1">
+        <img src="packagesimage.jpeg" >
+        <h2>See which package best suits you!</h2>
+        <button type="button" onclick="closePopup()">OK</button>
+      </div>
+
+      <!-- Hero Section-->
+
+      <div class="main">
+        <div class="main__container">
+          <div class="main__content">
+            <h1>GLAD Detailing</h1>
+            <h2>Our goal is to make sure you are GLAD we detail your car!</h2>
+            <p>See what makes us different.</p>
+            <button class="main__btn">
+              <a href="sms:5615077747" class="">Text to Book!</a>
+            </button>
+          </div>
+          <div class="main__img--container">
+            <img id="main__img" src="pngegg.png"/>
+          </div>
+        </div>
+      </div>
+
+      <!-- Services Section-->
+      <div class="services">
+        <h1>See what we're all about!</h1>
+        <div class="services__container">
+            <a href="gallery.html">
+                <div class="services__card">
+                    <h2>Exceptional work</h2>
+                    <p>The best for you</p>
+                    <button>Check it Out</button>
+                </div>
+            </a>
+                <div class="services__card" onclick="openPopup()">
+                    <h2>Which package best suits you?</h2>
+                    <p>Every car is different</p>
+                    <button>Get Started</button>
+                </div>
+        </div>
+      </div>
+
+      <!-- Footer Section -->
+      <div class="footer__container">
+        <div class="footer__links">
+          <div class="footer__link--wrapper">
+            <div class="footer__link--items">
+              <h2>About Us</h2>
+              <a href="about.html">Employees</a>
+              <a href="/">Coming Soon</a>
+            </div>
+            <div class="footer__link--items">
+              <h2>Contact Us</h2>
+              <a href="tel:5615077747">Call</a>
+              <a href="sms:5615077747">Text</a>
+            </div>
+          </div>
+          <div class="footer__link--wrapper">
+            <div class="footer__link--items">
+              <h2>Find Us</h2>
+              <a href="https://www.instagram.com/glad_detailing/" rel="noopener noreferrer" target="_blank">Instagram</a>
+              <a href="https://www.facebook.com/profile.php?id=100090678942144&mibextid=LQQJ4d" rel="noopener noreferrer" target="_blank" >Facebook</a>
+              <a href="https://twitter.com/GLAD_Detail" rel="noopener noreferrer" target="_blank">Twitter</a>
+            </div>
+          </div>
+        </div>
+        <div class="social__media">
+          <div class="social__media--wrap">
+            <div class="footer__logo">
+              <a href="index.html" id="footer__logo"><i class="fasfa-gem"></i>GLAD</a>
+            </div>
+            <p class="website__rights">
+              @ Glad Detailing LLC 2022. All rights reserved</p>
+          </div>
+        </div>
+      </div>
+
+
+      <script src ="app.js"></script>
+
+      
+
+</body>
+</html>

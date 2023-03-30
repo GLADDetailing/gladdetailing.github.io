@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>GLAD Detailing</title>
+    <link rel="stylesheet" href="styles.css"/>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+</head>
+<body>
+  <!--Navbar section-->
+    <nav class="navbar">
+        <div class="navbar__container">
+          <div class="logo-and-bubble">
+            <img id="main__imgB" src="bubble.png"/>
+            <a href="index.html" id="navbar__logo"><i class="fa-gem"></i>GLAD</a>
+          </div>
+          <div class="navbar__toggle" id="mobile-menu">
+            <span class="bar"></span> 
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+          <ul class="navbar__menu">
+            <li class="navbar__item">
+              <a href="index.html" class="navbar__links">Home</a>
+            </li>
+            <li class="navbar__item">
+              <a href="gallery.html" class="navbar__links">Gallery</a>
+            </li>
+            <li class="navbar__item">
+              <button type="packages" class="pck" onclick="openPopup()">Packages</button>
+            </li>
+            <li class="navbar__btn">
+              <button class="nav__btn">
+                <a href="tel:5615077747" class="button">Call Us</a>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      
+      <div class="popup" id="popup1">
+        <img src="packagesimage.jpeg" >
+        <h2>See which package best suits you!</h2>
+        <button type="button" onclick="closePopup()">OK</button>
+      </div>
+
+      <!-- Gallery Section -->
+          <div class= "gallery__title">
+            <h2 style="text-align:center">Gallery</h2>
+          </div>
+          <div class="gallery__container">
+              <div class="gallery__mySlides">
+                  <img src="bmwgold.jpg" >
+              </div>
+
+              <div class="gallery__mySlides">
+                <img src="graybmw.jpg">
+              </div>
+
+              <div class="gallery__mySlides">
+                <img src="redinterior.jpg" >
+              </div>
+                
+              <div class="gallery__mySlides">
+                  <img src="blackMerc.jpg">
+              </div>
+
+              <div class="gallery__mySlides">
+                  <img src="blacktruck.jpg">
+              </div>
+                
+              <div class="gallery__mySlides">
+                <img src="hondainterior.jpg" >            
+              </div>     
+
+              <div class="gallery__mySlides">
+                  <img src="blackinterior.jpg" >          
+              </div>   
+              
+            <a class="gallery__prev" onclick="plusSlides(-1)">❮</a>
+            <a class="gallery__next" onclick="plusSlides(1)">❯</a>
+
+            <div class="gallery__row">
+              <div class="gallery__column">
+                <img class="demo cursor" src="bmwgold.jpg" style="width:100%" onclick="currentSlide(1)">
+              </div>
+              <div class="gallery__column">
+                <img class="demo cursor" src="graybmw.jpg" style="width:100%" onclick="currentSlide(2)">
+              </div>
+              <div class="gallery__column">
+                <img class="demo cursor" src="redinterior.jpg" style="width:100%" onclick="currentSlide(3)">
+              </div>
+              <div class="gallery__column">
+                <img class="demo cursor" src="blackMerc.jpg" style="width:100%" onclick="currentSlide(4)" >
+              </div>
+              <div class="gallery__column">
+                <img class="demo cursor" src="blacktruck.jpg" style="width:100%" onclick="currentSlide(5)" >
+              </div>    
+              <div class="gallery__column">
+                <img class="demo cursor" src="hondainterior.jpg" style="width:100%" onclick="currentSlide(6)" >
+              </div>
+              <div class="gallery__column">
+                <img class="demo cursor" src="blackinterior.jpg" style="width:100%" onclick="currentSlide(7)" >
+              </div>
+            </div>
+          </div>
+
+      <!-- Footer Section -->
+      <div class="footer__container">
+        <div class="footer__links">
+          <div class="footer__link--wrapper">
+            <div class="footer__link--items">
+              <h2>About Us</h2>
+              <a href="about.html">Employees</a>
+              <a href="/">Coming Soon</a>
+            </div>
+            <div class="footer__link--items">
+              <h2>Contact Us</h2>
+              <a href="tel:5615077747">Phone</a>
+              <a href="mailto:gluxautodetailing@gmail.com">E-mail</a>
+            </div>
+          </div>
+          <div class="footer__link--wrapper">
+            <div class="footer__link--items">
+              <h2>Find Us</h2>
+              <a href="https://www.instagram.com/glad_detailing/" rel="noopener noreferrer" target="_blank">Instagram</a>
+              <a href="https://www.facebook.com/profile.php?id=100090678942144&mibextid=LQQJ4d" rel="noopener noreferrer" target="_blank">Facebook</a>
+              <a href="https://twitter.com/GLAD_Detail" rel="noopener noreferrer" target="_blank">Twitter</a>
+            </div>
+          </div>
+        </div>
+        <div class="social__media">
+          <div class="social__media--wrap">
+            <div class="footer__logo">
+              <a href="index.html" id="footer__logo"><i class="fasfa-gem"></i>NEXT</a>
+            </div>
+            <p class="website__rights">
+              @ Glad Detailing LLC 2020. All rights reserved</p>
+            <div class="social__icons">
+              <a href="" class="social__icon--link" 
+              target="_blank">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="" class="social__icon--link" 
+              target="_blank">
+                <i class="fab fa-facebook"></i>
+              </a>
+              <a href="" class="social__icon--link" 
+              target="_blank">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="" class="social__icon--link" 
+              target="_blank">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <script src ="app.js"></script>
+
+      <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+        
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+          let i;
+          let slides = document.getElementsByClassName("gallery__mySlides");
+          let dots = document.getElementsByClassName("demo");
+          let captionText = document.getElementById("caption");
+          if (n > slides.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";
+          dots[slideIndex-1].className += " active";
+        }
+
+        document.querySelector(".gallery__prev").addEventListener("click", () => {
+          plusSlides(-1);
+        });
+
+        document.querySelector(".gallery__next").addEventListener("click", () => {
+          plusSlides(1);
+        });
+      </script>
+
+
+</body>
+</html>
