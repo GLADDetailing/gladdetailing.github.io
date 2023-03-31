@@ -1,4 +1,4 @@
-* {
+*{
   box-sizing: border-box;
   /*border: 1px solid red;*/
   margin: 0;
@@ -351,6 +351,7 @@
   width: 100%;
   padding-right: 50px;
   padding-left: 50px;
+  padding-bottom: 1rem;
 }
 
 .main__container > * {
@@ -498,7 +499,6 @@
 
   .main__content {
     text-align: center;
-    margin-bottom: 0rem;
   }
 
   .main__content h1 {
@@ -520,7 +520,6 @@
   }
 
   .main__img--container img{ 
-    max-height: 500px;
     object-fit: cover;
   }
   
@@ -553,10 +552,6 @@
   .main__btn {
     padding: 12px 36px;
     margin: 1rem 1rem;
-  }
-
-  .main__img--container{
-    margin-bottom: 2rem;
   }
 }
 
@@ -680,6 +675,7 @@
   justify-content: center;
   align-items: center;
   height:100%;
+  padding-bottom: 2rem;
 }
 
 .services h1 {
@@ -775,6 +771,8 @@
   }
   .services h1 {
     font-size: 2.5rem;
+    text-align: center;
+    width: 100%;
   }
   .services__container{
     width: 100%;
@@ -805,7 +803,6 @@
   }
   .services__container{
     width: 100%;
-    padding-bottom:2rem;
   }
   .services__card{
     width: 250px;
