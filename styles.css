@@ -1281,29 +1281,29 @@
   width: auto;
 }
 
-h2 {
+.packages__container h2 {
   font-size: 24px;
   margin-top: 30px;
 }
 
-table {
+.packages__container table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
 }
 
-th, td {
+.packages__container th, td {
   padding: 10px;
   text-align: left;
   color:#fff;
   border-bottom: 1px solid #22F1F0;
 }
 
-th {
+.packages__container th {
   background-color: #cf556c;
 }
 
-p {
+.packages__container p {
   margin-bottom: 20px;
 }
 
@@ -1337,15 +1337,15 @@ p {
     padding: 10px;
   }
   
-  h2 {
+  .packages__container h2 {
     font-size: 20px;
   }
   
-  table {
+  .packages__container table {
     font-size: 14px;
   }
   
-  p {
+  .packages__container p {
     font-size: 14px;
   }
 }
