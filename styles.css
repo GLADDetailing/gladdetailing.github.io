@@ -1292,9 +1292,24 @@
   margin-bottom: 20px;
 }
 
+.packages__container th,
+.packages__container td {
+  width: 10%;
+}
+
+.packages__container th:nth-child(2),
+.packages__container td:nth-child(2),
+.packages__container th:nth-child(3),
+.packages__container td:nth-child(3),
+.packages__container th:nth-child(4),
+.packages__container td:nth-child(4) {
+  text-align: right;
+}
+
 .packages__container th, td {
   padding: 10px;
   text-align: left;
+  align-items: center;
   color:#fff;
   border-bottom: 1px solid #22F1F0;
 }
