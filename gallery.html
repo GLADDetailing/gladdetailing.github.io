@@ -76,7 +76,27 @@
               <div class="gallery__mySlides">
                   <img src="blackinterior.jpg" >          
               </div>   
-              
+
+              <div class="gallery__mySlides">
+                  <img src="expeditionExt.jpeg" >          
+              </div>
+    
+              <div class="gallery__mySlides">
+                  <img src="audiA4.jpeg" >          
+              </div>      
+
+              <div class="gallery__mySlides">
+                  <img src="audiInt.jpeg" >          
+              </div>
+
+              <div class="gallery__mySlides">
+                  <img src="whiteToyota.jpeg" >          
+              </div>      
+
+              <div class="gallery__mySlides">
+                  <img src="doorPanel.jpeg" >          
+              </div>
+            
             <a class="gallery__prev" onclick="plusSlides(-1)">❮</a>
             <a class="gallery__next" onclick="plusSlides(1)">❯</a>
 
@@ -101,6 +121,21 @@
               </div>
               <div class="gallery__column">
                 <img class="demo cursor" src="blackinterior.jpg" style="width:100%" onclick="currentSlide(7)" >
+              </div>
+              <div class="gallery__column">
+                <img class="demo cursor" src="expeditionExt.jpeg" style="width:100%" onclick="currentSlide(8)" >
+              </div>
+              <div class="gallery__column">
+                <img class="demo cursor" src="audiA4.jpeg" style="width:100%" onclick="currentSlide(9)" >
+              </div>
+              <div class="gallery__column">
+                <img class="demo cursor" src="audiInt.jpeg" style="width:100%" onclick="currentSlide(10)" >
+              </div>
+              <div class="gallery__column">
+                <img class="demo cursor" src="whiteToyota.jpeg" style="width:100%" onclick="currentSlide(11)" >
+              </div>
+              <div class="gallery__column">
+                <img class="demo cursor" src="doorPanel.jpeg" style="width:100%" onclick="currentSlide(12)" >
               </div>
             </div>
           </div>
@@ -172,14 +207,15 @@
           dots[slideIndex-1].className += " active";
           captionText.innerHTML = dots[slideIndex-1].alt;
         }
-
+        
         document.querySelector(".gallery__prev").addEventListener("click", () => {
           plusSlides(-1);
         });
-
+        
         document.querySelector(".gallery__next").addEventListener("click", () => {
           plusSlides(1);
         });
+        
       </script>
 
 
