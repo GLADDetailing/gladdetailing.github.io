@@ -1175,7 +1175,7 @@
 /* Six columns side by side */
 .gallery__column {
   float: left;
-  width: 14.28%;
+  width: 16.6666667%;
 }
 
 /* Add a transparency effect for thumnbail images */
