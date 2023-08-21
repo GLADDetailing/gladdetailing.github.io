@@ -1228,7 +1228,7 @@
 }
 
 .about__content h2 {
-  font-size: 3rem;
+  font-size: 2rem;
   margin-top: 10px;
   background-image: linear-gradient(-20deg, #EC553E 15%, #22F1F0 100%);
   background-size: 100%;
@@ -1248,7 +1248,7 @@
 }
 
 .employees h1{
-  font-size: 3rem;
+  font-size: 2rem;
   background-image: linear-gradient(to top, #1062B8 0%, white 100%);
   background-size: 100%;
   -webkit-background-clip: text;
@@ -1258,7 +1258,7 @@
 }
 
 .employees h2{
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-top: 3px;
   background-image: linear-gradient(-20deg, #EC553E 15%, #22F1F0 100%);
   background-size: 100%;
