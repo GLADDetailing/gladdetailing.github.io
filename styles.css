@@ -1112,6 +1112,13 @@
   object-fit: cover;
   
 }
+/*Update styles for the main gallery container */
+.main-gallery-container {
+  background-color: #1062B8;
+  position: relative;
+  width: auto;
+  padding-bottom: 2rem;
+}
 
 /* Position the image container (needed to position the left and right arrows) */
 .gallery__container {
@@ -1162,7 +1169,7 @@
 /* Container for image text */
 
 /*Hide the row of thumbnails*/
-.gallery__row{
+.thumbnails-container{
   display: none;
 }
 
