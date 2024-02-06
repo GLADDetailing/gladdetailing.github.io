@@ -216,9 +216,9 @@
           let touchEndX = e.touches[0].clientX;
           let deltaX = touchStartX - touchEndX;
         
-          if (deltaX > 25) {
+          if (deltaX > 5) {
             plusSlides(1); // Swipe left, go to the next slide
-          } else if (deltaX < -25) {
+          } else if (deltaX < -5) {
             plusSlides(-1); // Swipe right, go to the previous slide
           }
         
