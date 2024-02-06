@@ -166,7 +166,7 @@
   }
   
   .navbar__menu.active {
-    background: purple;
+    background-image: linear-gradient(to right, #1062B8 15%, white 100%);
     top: 100%;
     right: 0;
     opacity: 1;
