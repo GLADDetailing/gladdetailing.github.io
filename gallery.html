@@ -176,7 +176,12 @@
       <script>
         let slideIndex = 1;
         showSlides(slideIndex);
-        
+
+        // Add touch event listeners for swiping
+        document.querySelector(".gallery__container").addEventListener("touchstart", handleTouchStart, false);
+        document.querySelector(".gallery__container").addEventListener("touchmove", handleTouchMove, false);
+
+        //arrow functions for users on computer
         function plusSlides(n) {
           showSlides(slideIndex += n);
         }
@@ -184,7 +189,7 @@
         function currentSlide(n) {
           showSlides(slideIndex = n);
         }
-        
+       
         function showSlides(n) {
           let i;
           let slides = document.getElementsByClassName("gallery__mySlides");
@@ -202,6 +207,28 @@
           dots[slideIndex-1].className += " active";
           captionText.innerHTML = dots[slideIndex-1].alt;
         }
+        //adding swipe functions
+        function handleTouchStart(e) {
+          touchStartX = e.touches[0].clientX;
+        }
+        
+        function handleTouchMove(e) {
+          if (!touchStartX) {
+            return;
+          }
+        
+          let touchEndX = e.touches[0].clientX;
+          let deltaX = touchStartX - touchEndX;
+        
+          if (deltaX > 50) {
+            plusSlides(1); // Swipe left, go to the next slide
+          } else if (deltaX < -50) {
+            plusSlides(-1); // Swipe right, go to the previous slide
+          }
+        
+          touchStartX = null; // Reset touchStartX
+        }
+
         
         document.querySelector(".gallery__prev").addEventListener("click", () => {
           plusSlides(-1);
