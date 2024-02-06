@@ -126,6 +126,44 @@
 
       <script src ="app.js"></script>
 
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          // Array containing paths to your images
+          var imagesArray = [
+            "redinterior.jpg",
+            "hellcatWhite.jpg",
+            "graybmw.jpg",
+            "cadillacWhite.jpg",
+            "subaruSteering.jpg",
+            "bmw430iLogoFront.jpg",
+            "bmw430iBack.jpg"
+          ];
+
+          // Shuffle the images array randomly
+          images = shuffleArray(imagesArray);
+
+          // Get all elements with the class "services__card"
+          var cards = document.querySelectorAll(".services__card");
+
+          // Set background images for each card
+          cards.forEach(function(card, index) {
+            var imageUrl = "url('" + images[index] + "')";
+            card.style.backgroundImage = "linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(17, 17, 17, 0.6) 100%), " + imageUrl;
+          });
+        });
+
+        // Function to shuffle array elements randomly
+        function shuffleArray(array) {
+        for (var i = array.length - 1; i > 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1));
+          var temp = array[i];
+          array[i] = array[j];
+          array[j] = temp;
+        }
+        return array;
+        }
+      </script>
       
 
 </body>
