@@ -1098,6 +1098,14 @@
   -moz-text-fill-color: transparent;
 }
 
+/*Update styles for the main gallery container */
+.main-gallery-container {
+  background-color: #1062B8;
+  position: relative;
+  width: auto;
+  padding-bottom: 2rem;
+}
+
 .gallery__container img{
   display: block;
   margin-left: auto;
@@ -1112,13 +1120,7 @@
   object-fit: cover;
   
 }
-/*Update styles for the main gallery container */
-.main-gallery-container {
-  background-color: #1062B8;
-  position: relative;
-  width: auto;
-  padding-bottom: 2rem;
-}
+
 
 /* Position the image container (needed to position the left and right arrows) */
 .gallery__container {
@@ -1132,10 +1134,6 @@
   display: none;
 }
 
-/* Add a pointer when hovering over the thumbnail images */
-.cursor {
-  cursor: pointer;
-}
 
 /* Next & previous buttons */
 .gallery__prev,
@@ -1165,43 +1163,6 @@
 .gallery__next:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
-
-/* Container for image text */
-
-/*Hide the row of thumbnails*/
-.thumbnails-container{
-  display: none;
-}
-
-.gallery__row{
-  padding-bottom: 2rem;
-  
-}
-
-.gallery__row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Six columns side by side */
-.gallery__column {
-  float: left;
-  width: 16.6666667%;
-}
-
-/* Add a transparency effect for thumnbail images */
-.demo {
-  opacity: 0.6;
-  height: 100px;
-  object-fit: cover;
-}
-
-.active,
-.demo:hover {
-  opacity: 1;
-}
-
 
 /* About Page */
 
