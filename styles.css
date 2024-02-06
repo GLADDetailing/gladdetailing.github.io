@@ -272,7 +272,7 @@
 
 .main__container {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse; /*change flex direction to row-reverse*/
   justify-content: center;
   align-items: center;
   height: 100%;
