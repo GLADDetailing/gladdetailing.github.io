@@ -1161,6 +1161,11 @@
 
 /* Container for image text */
 
+/*Hide the row of thumbnails*/
+.gallery__row{
+  display: none;
+}
+
 .gallery__row{
   padding-bottom: 2rem;
   
