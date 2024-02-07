@@ -324,28 +324,44 @@
   border-bottom: 0; 
 }
 
-.main__btn {
+.main__buttons {
+  display: inline-block;
   font-size: 1.5rem;
-  background-image: linear-gradient(to top, #EC553E 15%, white 100%);
-  padding: 14px 32px;
   border: none;
   border-radius: 4px;
-  color: #fff;
-  margin-top: 2rem;
+  margin: 1.5rem;
   cursor: pointer;
   position: relative;
   transition: all 0.35s;
   outline: none;
 }
 
-.main__btn a {
+.main__buttons:nth-of-type(1){
+  background-image: linear-gradient(to top, #EC553E 15%, white 100%);
+  padding: 14px 32px;
+}
+
+.main__buttons:nth-of-type(2){
+  background-image: radial-gradient(circle , #f124d2 10%, white 15%, rgb(227, 37, 164) 20%, rgb(227, 37, 164) 40%, white 45%, rgb(227, 167, 37) 50%, rgb(135, 27, 181) 100%);
+  padding: 14px 32px;
+}
+
+.main__buttons a {
   position: relative;
-  z-index: 2;
-  color: #fff;
+  font-size: 2rem;
+  z-index: 3;
   text-decoration: none;
 }
 
-.main__btn:after {
+.main__buttons:nth-of-type(1) a{
+  color: black;
+}
+
+.main__buttons:nth-of-type(2) a{
+  color: black;
+}
+
+.main__buttons:after {
   position: absolute;
   content: '';
   top: 0;
@@ -357,13 +373,14 @@
   border-radius: 4px;
 }
 
-.main__btn a:hover {
+.main__buttons a:hover {
   color: #b12a5b;
   transition: all 0.35s;
 }
 
-.main__btn:hover:after {
+.main__buttons:hover:after {
   width: 100%;
+  height: 100%;
 }
 
 .main__img--container {
@@ -415,6 +432,10 @@
     padding-top: 2rem;
   }
 
+  .main__buttons a{
+    font-size: 1.8rem;
+  }
+
 }
 
 @media screen and (max-width: 900px) {
@@ -453,6 +474,7 @@
     object-fit: cover;
   }
   
+  
 }
   
 @media screen and (max-width: 770px) {
@@ -479,9 +501,13 @@
     font-size: 1.5rem;
   }
 
-  .main__btn {
-    padding: 12px 36px;
+  .main__buttons {
+    padding: 12px 20px;
     margin: 1rem 1rem;
+  }
+
+  .main__buttons a{
+    font-size: 1.3rem;
   }
 }
 
@@ -499,14 +525,10 @@
     font-size: 1.5rem;
   }
 
-  .main__btn {
-    padding: 12px 36px;
-    margin: 1rem 1rem;
-  }
-
   .main__img--container{
     visibility: hidden;
-    height:0;
+    height: 200px;
+    width: 200px;
   }
 }
 
@@ -526,11 +548,6 @@
 
   .main__content p {
     font-size: 1.5rem;
-  }
-
-  .main__btn {
-    padding: 12px 36px;
-    margin: 1rem 1rem;
   }
 
 }
@@ -559,11 +576,6 @@
   .main__content p {
     font-size: 1.5rem;
   }
-
-  .main__btn {
-    padding: 12px 36px;
-    margin: 1rem 1rem;
-  }
 }
 
 
@@ -584,7 +596,7 @@
     font-size: 1.5rem;
   }
 
-  .main__btn {
+  .main__buttons {
     padding: 12px 36px;
     margin: 1rem 1rem;
   }
