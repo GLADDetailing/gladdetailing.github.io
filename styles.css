@@ -513,7 +513,12 @@
 }
 
 @media screen and (max-width: 650px) {
-  
+  .main__content {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 1rem;
+  }
+
   .main__content h1 {
     font-size: 3rem;
   }
@@ -530,26 +535,6 @@
     height: 350px;
     width: 350px;
   }
-}
-
-
-@media screen and (max-width: 414px) {
-  .main__container{
-    height: 100%;
-  }
-  
-  .main__content h1 {
-    font-size: 3rem;
-  }
-
-  .main__content h2 {
-    font-size: 2rem;
-  }
-
-  .main__content p {
-    font-size: 1.5rem;
-  }
-
 }
 
 @media screen and (max-width: 390px) {
