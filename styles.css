@@ -1128,6 +1128,7 @@
 .gallery__mySlides img {
   max-width: 1000px;
   max-height: 850px;
+  min-height: 600px;
   object-fit: cover;
   
 }
