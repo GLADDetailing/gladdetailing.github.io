@@ -526,7 +526,6 @@
   }
 
   .main__img--container{
-    visibility: hidden;
     height: 200px;
     width: 200px;
   }
