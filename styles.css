@@ -1175,14 +1175,14 @@
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 650px) {
   .gallery__title h2{
     padding: 0.5rem;
     font-size: 2rem;
   }
   
   .gallery__mySlides img {
-    width: 380px;
+    width: 370px;
     height: 500px;
     object-fit: cover;
   }
