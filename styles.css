@@ -1182,12 +1182,12 @@
   }
   
   .gallery__mySlides img {
-    width: 400px;
+    width: 350px;
     height: 500px;
     object-fit: cover;
   }
-  .gallery__prev:,
-  .gallery__next: {
+  .gallery__prev,
+  .gallery__next {
     visibility: hidden;
   }
 }
