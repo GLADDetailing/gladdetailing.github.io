@@ -8,7 +8,7 @@
 
 .navbar {
   background: black;
-  height: 80px;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -853,7 +853,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
 }
 
 #footer__logo{
@@ -1095,6 +1094,7 @@
   background-color: #1062B8;
   position: relative;
   width: auto;
+  padding-bottom: 1rem;
 }
 
 .gallery__container img{
@@ -1102,13 +1102,13 @@
   margin-left: auto;
   margin-right: auto;
   width: 85%;
-  padding-bottom: 5rem;
+  padding-bottom: 1rem;
 }
 
 
 .gallery__mySlides img {
   max-width: 1000px;
-  height: 850px;
+  height: 900px;
   object-fit: cover;
   
 }
@@ -1155,6 +1155,34 @@
 .gallery__next:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
+
+.inst__button {
+  background-image: linear-gradient(to right , rgb(128, 23, 173) 0, rgb(164, 51, 213)8%, white 15%, rgb(227, 37, 164) 18%, yellow 50%, rgb(227, 37, 164) 80%, white 85%, rgb(164, 51, 213) 92%, rgb(128, 23, 173) 100%);
+  padding: 14px 14px;
+  width: 200px;
+  height: 70px;
+  font-size: 2rem;
+  position: relative;
+  border-radius: 5rem;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.inst__button a{
+  z-index: 3;
+  color: black;
+  font-weight:bolder;
+  text-decoration: none;
+  padding-bottom: 10px;
+}
+.inst__button a:hover{
+  color: white;
+  transition: all 0.35s;
+}
+
+
 
 @media screen and (max-width: 650px) {
   .gallery__title h2{
