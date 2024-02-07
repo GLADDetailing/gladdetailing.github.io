@@ -398,12 +398,13 @@
   object-fit: cover;
 }
 
-#main__img {
-  height: 70%;
-  width: 70%;
-  /*padding-bottom: 2rem;*/
+/* #main__img {
+  height: 80%;
+  width: 80%;
+  /*padding-bottom: 2rem;
   
 }
+*/
 
   
 /* Mobile Responsive */
@@ -511,7 +512,7 @@
   }
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 650px) {
   
   .main__content h1 {
     font-size: 3rem;
@@ -526,8 +527,8 @@
   }
 
   .main__img--container{
-    height: 400px;
-    width: 400px;
+    height: 350px;
+    width: 350px;
   }
 }
 
