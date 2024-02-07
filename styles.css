@@ -1182,12 +1182,12 @@
   }
   
   .gallery__mySlides img {
-    width: 500px;
-    height: 600px;
+    width: 400px;
+    height: 500px;
     object-fit: cover;
   }
-  .gallery__prev:hover,
-  .gallery__next:hover {
+  .gallery__prev:,
+  .gallery__next: {
     visibility: hidden;
   }
 }
