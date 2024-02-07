@@ -1186,7 +1186,10 @@
     max-height: 600px;
     object-fit: cover;
   }
-
+  .gallery__prev:hover,
+  .gallery__next:hover {
+    visibility: hidden;
+  }
 }
 
 /* About Page */
