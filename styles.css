@@ -513,12 +513,7 @@
 }
 
 @media screen and (max-width: 650px) {
-  .main__content {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 0 1rem;
-  }
-
+  
   .main__content h1 {
     font-size: 3rem;
   }
