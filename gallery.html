@@ -237,6 +237,18 @@
         
       </script>
 
+       <!--Change the title of the gallery page-->
+      <script>
+        window.addEventListener('resize', function() {
+          var title = document.querySelector('.gallery__title h2');
+          if (window.innerWidth <= 500) {
+            title.textContent = "Swipe Left or Right"; // Change title text for smaller screens
+          } else {
+            title.textContent = "Gallery"; // Revert to original title for larger screens
+          }
+        });
+      </script>
+
 
 </body>
 </html>
