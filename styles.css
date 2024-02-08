@@ -85,12 +85,13 @@
   background-image: linear-gradient(to top, #EC553E 15%, white 100%);
     padding: 10px 20px;
     border: none;
-    border-radius: 4px;
+    border-radius: 2rem;
     color: #fff;
     cursor: pointer;
     position: relative;
     transition: all 0.35s;
     outline: none;
+    font-weight:bolder;
 }
 
 .button {
@@ -98,7 +99,7 @@
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  color: #fff;
+  color: whitesmoke;
   position: relative;
   z-index: 2;
   text-decoration: none;
@@ -113,7 +114,7 @@
     height: 100%;
     background: #22F1F0;
     transition: all 0.35s;
-    border-radius: 4px;
+    border-radius: 2rem;
    
 }
 
@@ -328,7 +329,7 @@
   display: inline-block;
   font-size: 1.5rem;
   border: none;
-  border-radius: 4px;
+  border-radius: 3rem;
   margin: 1.5rem;
   cursor: pointer;
   position: relative;
@@ -337,12 +338,12 @@
 }
 
 .main__buttons:nth-of-type(1){
-  background-image: linear-gradient(to top, #EC553E 15%, white 100%);
+  background-image: radial-gradient(circle,#1062B8 50%, #EC553E 100%, white 70%);
   padding: 14px 32px;
 }
 
 .main__buttons:nth-of-type(2){
-  background-image: radial-gradient(circle , #f124d2 10%, white 15%, rgb(227, 37, 164) 20%, rgb(227, 37, 164) 40%, white 45%, rgb(227, 167, 37) 50%, rgb(135, 27, 181) 100%);
+  background-image: radial-gradient(circle , #1062B8 50%, #8ebced 100%);
   padding: 14px 32px;
 }
 
@@ -351,14 +352,15 @@
   font-size: 2rem;
   z-index: 3;
   text-decoration: none;
+  font-weight:bolder;
 }
 
 .main__buttons:nth-of-type(1) a{
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 .main__buttons:nth-of-type(2) a{
-  color: black;
+  color: #b4d8ff;
 }
 
 .main__buttons:after {
@@ -370,7 +372,7 @@
   height: 100%;
   background: #22F1F0;
   transition: all 0.35s;
-  border-radius: 4px;
+  border-radius: 3rem;
 }
 
 .main__buttons a:hover {
@@ -1095,6 +1097,7 @@
   position: relative;
   width: auto;
   padding-bottom: 1rem;
+  
 }
 
 .gallery__container img{
@@ -1156,33 +1159,68 @@
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-.inst__button {
-  background-image: linear-gradient(to right , rgb(128, 23, 173) 0, rgb(164, 51, 213)8%, white 15%, rgb(227, 37, 164) 18%, yellow 50%, rgb(227, 37, 164) 80%, white 85%, rgb(164, 51, 213) 92%, rgb(128, 23, 173) 100%);
-  padding: 14px 14px;
-  width: 200px;
-  height: 70px;
+.social__buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inst__buttons {
+  display: inline-block;
   font-size: 2rem;
-  position: relative;
-  border-radius: 5rem;
+  border: none;
+  border-radius: 3rem;
+  margin: 1.5rem;
   cursor: pointer;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
+  position: relative;
+  transition: all 0.35s;
+  outline: none;
 }
-.inst__button a{
+
+.inst__buttons:nth-last-child(2){
+  background-image: radial-gradient(circle,#1062B8 50%, #EC553E 100%, white 70%);
+  padding: 14px 32px;
+}
+.inst__buttons:nth-last-child(1){
+  background-image: radial-gradient(circle , #1062B8 50%, #8ebced 100%);  padding: 14px 32px;
+  padding: 14px 32px;
+}
+
+.inst__buttons a{
+  position: relative;
+  font-size: 2rem;
   z-index: 3;
-  color: black;
-  font-weight:bolder;
   text-decoration: none;
-  padding-bottom: 10px;
+  font-weight: bolder;
 }
-.inst__button a:hover{
+
+.inst__buttons:nth-last-child(1) a{
+  color: #b4d8ff;
+}
+.inst__buttons:nth-last-child(2) a{
   color: white;
+}
+
+.inst__buttons a:hover{
+  color: #b12a5b;
   transition: all 0.35s;
 }
 
-
+.inst__buttons:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #22F1F0;
+  transition: all 0.35s;
+  border-radius: 3rem;
+}
+.inst__buttons:hover:after {
+  width: 100%;
+  height: 100%;
+}
 
 @media screen and (max-width: 650px) {
   .gallery__title h2{
@@ -1192,7 +1230,7 @@
   
   .gallery__mySlides img {
     width: 370px;
-    height: 500px;
+    height: 400px;
     object-fit: cover;
   }
   .gallery__prev,
