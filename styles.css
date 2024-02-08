@@ -1237,6 +1237,9 @@
   .gallery__next {
     visibility: hidden;
   }
+  .inst__buttons {
+    font-size: 1rem;
+  }
 }
 
 /* About Page */
