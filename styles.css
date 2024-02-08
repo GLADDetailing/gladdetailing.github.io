@@ -1221,7 +1221,7 @@
   height: 100%;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 750px) {
   .gallery__title h2{
     padding: 0.5rem;
     font-size: 2rem;
@@ -1239,8 +1239,11 @@
   .gallery__next {
     visibility: hidden;
   }
+  .inst__buttons{
+    padding: 5px 10px;
+  }
   .inst__buttons a{
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 }
 
