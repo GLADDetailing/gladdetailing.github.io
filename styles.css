@@ -1221,7 +1221,7 @@
   height: 100%;
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 650px) {
   .gallery__title h2{
     padding: 0.5rem;
     font-size: 2rem;
