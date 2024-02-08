@@ -1097,7 +1097,6 @@
   position: relative;
   width: auto;
   padding-bottom: 1rem;
-  
 }
 
 .gallery__container img{
@@ -1113,7 +1112,6 @@
   max-width: 1000px;
   height: 900px;
   object-fit: cover;
-  
 }
 
 
@@ -1175,6 +1173,7 @@
   position: relative;
   transition: all 0.35s;
   outline: none;
+  text-align: center;
 }
 
 .inst__buttons:nth-last-child(2){
@@ -1222,16 +1221,19 @@
   height: 100%;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 850px) {
   .gallery__title h2{
     padding: 0.5rem;
     font-size: 2rem;
   }
-  
+  .main-gallery-container{
+    padding-bottom: 0;
+  }
   .gallery__mySlides img {
     width: 370px;
     height: 400px;
     object-fit: cover;
+    padding-bottom: 0;
   }
   .gallery__prev,
   .gallery__next {
