@@ -1222,7 +1222,7 @@
   height: 100%;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 650px) {
   .gallery__title h2{
     padding: 0.5rem;
     font-size: 2rem;
@@ -1241,10 +1241,10 @@
     visibility: hidden;
   }
   .inst__buttons:nth-last-child(2){
-    padding: 3px 12px;
+    padding: 5px 12px;
   }
   .inst__buttons:nth-last-child(1){
-    padding: 3px 12px;
+    padding: 5px 12px;
   }
   .inst__buttons a{
     font-size: 1.2rem;
