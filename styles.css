@@ -1362,6 +1362,12 @@
   font-size: 3rem;
   text-align: center;
   margin-bottom: 20px;
+  background-image: linear-gradient(to top, #1062B8 0%, white 100%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
 }
 
 .founder__image {
