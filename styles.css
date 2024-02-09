@@ -1253,7 +1253,7 @@
   }
 }
 
-/* About Page */
+/* About Products Page */
 
 .about__main {
   background-color: #1DC9E0;
@@ -1334,6 +1334,61 @@
   color: white;
   font-size: 1.3rem;
 }
+
+/*About Founder*/
+
+.about-me__container {
+  background-color: #1062B8;
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+
+}
+
+.about-me__content {
+  max-width: 800px;
+}
+
+.about-me__content p {
+  text-indent: 10px;
+  font-size:  1.5rem;
+}
+
+.about-me__content p:nth-child(7) {
+  font-weight: bold;
+}
+
+.about-me__content h1 {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.founder__image {
+  max-width: 350px;
+  height: auto;
+  float: left;
+  margin-right: 20px;
+}
+
+/* For mobile screens */
+@media screen and (max-width: 700px) {
+  .about-me__content h1{
+    font-size: 2rem;
+  }
+  .about-me__container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .founder__image {
+    width: 150px;
+    height: auto;
+    margin-right: 10px;
+    margin-bottom: 5px;
+  }
+}
+
 
 /*Packages Page*/
 
