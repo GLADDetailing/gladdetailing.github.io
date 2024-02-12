@@ -1474,11 +1474,12 @@
   .container {
     padding: 10px;
   }
-  
   .packages__container h2 {
-    font-size: 30px;
+    font-size: 20px;
   }
-  
+  .packages__container th{
+    font-size: 15px;
+  }
   .packages__container table {
     font-size: 14px;
   }
