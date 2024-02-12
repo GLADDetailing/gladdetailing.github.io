@@ -1497,6 +1497,9 @@
     margin-right: 0px;
     padding-right: 0px;
   }
+  .service-name{
+    white-space: nowrap;
+  }
   .service-row td:nth-child(2){
     margin-left: 0px;
     padding-left: 0px;
