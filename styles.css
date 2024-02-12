@@ -1480,11 +1480,20 @@
   .packages__container th{
     font-size: 15px;
   }
+  .packages__container table th{
+    margin-left: 0;
+  }
+  .packages__container table th:nth-child(1){
+    padding-right: 50px;
+  }
   .packages__container table {
     font-size: 14px;
   }
   .service-toggle{
     font-size: 10px;
+  }
+  .service-row td:nth-child(1){
+    margin-righ: 0px;
   }
   .packages__container p {
     font-size: 14px;
