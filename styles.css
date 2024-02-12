@@ -1491,6 +1491,7 @@
   }
   .service-toggle{
     font-size: 10px;
+    color: white;
   }
   .service-row td:nth-child(1){
     margin-right: 0px;
