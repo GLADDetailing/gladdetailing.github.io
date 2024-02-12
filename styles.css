@@ -1487,3 +1487,24 @@
     font-size: 14px;
   }
 }
+
+/* Add these new styles */
+.service-toggle {
+  cursor: pointer;
+  display: inline-block;
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+.service-details {
+  display: none;
+}
+
+.service-details.show {
+  display: table-row;
+}
+
+.service-description {
+  padding-left: 20px;
+  background-color: #1062B8;
+}
