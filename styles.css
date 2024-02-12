@@ -1405,8 +1405,8 @@
 }
 
 .packages__container h2 {
-  font-size: 24px;
-  margin-top: 30px;
+  font-size: 30px;
+  margin-top: 10px;
 }
 
 .packages__container table {
@@ -1470,19 +1470,21 @@
 }
 
 /* Responsive Styles */
-@media (max-width: 600px) {
+@media (max-width: 750px) {
   .container {
     padding: 10px;
   }
   
   .packages__container h2 {
-    font-size: 20px;
+    font-size: 30px;
   }
   
   .packages__container table {
     font-size: 14px;
   }
-  
+  .service-toggle{
+    font-size: 10px;
+  }
   .packages__container p {
     font-size: 14px;
   }
