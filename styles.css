@@ -1085,6 +1085,9 @@
   position: relative;
   width: auto;
   padding-bottom: 1rem;
+  align-items: center;
+  justify-content: center;
+  display: grid;
 }
 
 .gallery__container img{
@@ -1104,10 +1107,8 @@
 
 
 /* Position the image container (needed to position the left and right arrows) */
-.gallery__container {
-  background-image: linear-gradient(to left, black 0%, #1062B8 20%,  #1062B8 80%, black 100%);
-  position: relative;
-  width: auto;
+.gallery__container {  position: relative;
+  max-width: 1400px;
 }
 
 /* Hide the images by default */
