@@ -280,7 +280,7 @@
   width: 1000px;
   padding-right: 50px;
   padding-left: 50px;
-  padding-bottom: 1rem;
+  /* padding-bottom: 1rem; */
 }
 
 .main__container > * {
@@ -442,7 +442,6 @@
     align-items: center;
     justify-self: center;
     width: 80%;
-    height: 100%;
   }
 
   .main__content {
@@ -470,6 +469,9 @@
   .main__img--container{
     height: 0px;
     visibility: hidden;
+    height: 0;
+    padding:0;
+    margin:0;
   }
   
   
@@ -481,12 +483,12 @@
     grid-template-columns: auto;
     align-items: center;
     justify-self: center;
-    width: 100%;
+    width: 80%;
     height: 100%;
   }
   .main__content h1 {
     font-size: 3rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
   .main__content h2 {
     font-size: 2rem;
@@ -517,11 +519,6 @@
 
   .main__content p {
     font-size: 1.5rem;
-  }
-
-  .main__img--container{
-    visibility: hidden;
-    height: 0px;
   }
 }
 
