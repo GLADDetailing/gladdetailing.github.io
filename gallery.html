@@ -186,49 +186,6 @@
         </div>
       </div>
 
-    <!--Testing Instagram API-->
-    
-      <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const accessToken = "IGAAWME5jAq2hBZAE9WeFlNMnZAJU0dYcFRZAZAVJMRFBQb3dOeEwwOEJJQjltMFZAVRnVmSHN6c3NPVTJuVkl4ZAVpBdncxdEo1Y0czT29qOEthaDhGTjFtQmg4RmstelFEOU5LNVdLRHFZAVnRlYkh3dVpMZAjVOWGFCZAEhyTlg0cU5QQQZDZD"; // Replace with your Instagram Access Token
-            const galleryContainer = document.querySelector(".gallery__container"); // Target the correct div
-    
-            // Fetch Instagram posts
-            fetch(`https://graph.instagram.com/me/media?fields=id,media_type,media_url,caption,permalink,timestamp&access_token=${accessToken}`)
-                .then(response => response.json())
-                .then(data => {
-                    console.log("Fetched Posts:", data); // Debugging
-    
-                    // Ensure galleryContainer exists
-                    if (!galleryContainer) {
-                        console.error("Gallery container not found!");
-                        return;
-                    }
-    
-                    galleryContainer.innerHTML = ''; // Clear existing images before adding new ones
-    
-                    data.data.forEach((post, index) => {
-                        if (post.media_type === "IMAGE" || post.media_type === "CAROUSEL_ALBUM") {
-                            const slideDiv = document.createElement("div");
-                            slideDiv.classList.add("gallery__mySlides");
-    
-                            // Insert image and link
-                            slideDiv.innerHTML = `
-                                <a href="${post.permalink}" target="_blank">
-                                    <img src="${post.media_url}" class="gallery__image" alt="${post.caption || 'Instagram Image'}">
-                                </a>
-                            `;
-    
-                            galleryContainer.appendChild(slideDiv);
-                        }
-                    });
-    
-                    console.log("Gallery Content:", galleryContainer.innerHTML); // Debugging
-                })
-                .catch(error => console.error("Error fetching Instagram posts:", error));
-        });
-      </script>
-
 
       <script src ="app.js"></script>
 
