@@ -11,12 +11,12 @@ Static HTML, CSS, and JavaScript, ready for GitHub Pages. No build step or runti
 - Confirmed service areas and Monday–Saturday, 8 a.m.–7 p.m. appointment hours.
 - Unique titles/descriptions, production canonical URLs, Open Graph metadata, Organization/Service/Offer/Breadcrumb JSON-LD, robots.txt, and a current sitemap.
 - Responsive WebP image variants with explicit dimensions, lazy loading below the hero, and prioritized hero imagery.
-- Direct GA4 integration for measurement ID `G-1G04ECDY81`, with page views, booking starts, booking-page views, package/vehicle selection, calls, texts, and external-form clicks. Only the production HTTPS domains load Google’s tag; local previews send no analytics requests. Actual submitted forms and confirmed appointments are not inferred.
-- Booking form selections preserved in direct links and fallback links; the original Google Form remains the submission destination.
+- Direct GA4 integration for measurement ID `G-1G04ECDY81`, with page views, booking starts, booking-page views, package/vehicle selection, calls, texts, and a lead event after the server acknowledges a saved request. Only the production HTTPS domains load Google’s tag; local previews send no analytics requests. A saved request is distinct from a confirmed appointment.
+- Branded website booking forms save validated requests to the existing private Google Sheet through Google Apps Script; no Google Form iframe is displayed.
 - All nine website photographs retouched with built-in image generation for balanced lighting, color, and detail, including the Ferrari and founder portrait; optimized JPEGs are in `assets/`.
 - Scroll reveals, animated marquee, hover treatments, and reduced-motion support.
 - Vehicle-size pricing, expandable service details, and gallery photo dialogs.
-- Booking dialog using the existing Google Form, with verified package and sedan/SUV prefilling. Truck and large SUV visitors choose their exact vehicle type within the form.
+- Matching booking page and dialogs, with preserved package/vehicle selection, phone and availability fields, optional add-ons, and booking-related text consent.
 - Mobile booking/text bar, accessible navigation, and a dismissible booking reminder after 35 seconds and meaningful scroll progress. The reminder is limited to once per browser session.
 - Existing business phone, Instagram, pricing, custom domain, and privacy policy content retained.
 
@@ -32,4 +32,10 @@ This source is prepared for the existing GitHub Pages site at https://gladdetail
 
 `analytics.js` loads before `app.js` on all 12 pages. It configures GA4 once, and sends only the approved lead-intent event categories and fields. It honors the standard Google Analytics opt-out flag, excludes arbitrary URL parameters from page URLs, disables advertising signals/personalization, and leaves local previews untracked. GA4 receipt, account-side custom dimensions, and key-event settings must be verified after publication.
 
-Isolated Node checks cover production-host routing, no preview requests, event payload filtering, duplicate initialization, and opt-out behavior. These tests do not contact Google or prove receipt in the GA4 property.
+Isolated Node checks cover production-host routing, no preview requests, event payload filtering, duplicate initialization, opt-out behavior, booking acknowledgements, validation, and duplicate/uncertain-save handling. These tests do not contact Google or prove receipt in the GA4 property.
+
+## Booking connection
+
+`booking-config.mjs` contains only the public Google Apps Script web-app URL. Google credentials and the Mac outreach scripts are never included in this repository. The receiver validates requests, uses the existing 15-column sheet layout, and only acknowledges a request after saving. The existing Mac sender sends the first introduction and marks it sent; customer replies are handled by Miguel. The Mac must be awake, online, and connected to its existing Messages setup for automatic outreach.
+
+Receiver checks include required text consent, allowed service/vehicle/area/day values, a form-session challenge, a honeypot, phone/global rate limits, spreadsheet formula escaping, exact schema checks, a save lock, and idempotent request IDs. Unknown save outcomes prompt contact by text rather than claiming success or creating a second row. Customer data is never sent in the analytics payload.

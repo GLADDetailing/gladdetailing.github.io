@@ -1,4 +1,5 @@
-import { readSelection, buildFormURL, buildBookingPageURL, VEHICLES, PACKAGES } from './booking-utils.mjs';
+import { setupBookingForms, applyBookingSelection } from './booking-form.mjs';
+import { readSelection, buildBookingPageURL, VEHICLES, PACKAGES } from './booking-utils.mjs';
 (() => {
   'use strict';
   const $ = (selector) => document.querySelector(selector);
@@ -92,23 +93,17 @@ import { readSelection, buildFormURL, buildBookingPageURL, VEHICLES, PACKAGES } 
     set() { try { sessionStorage.setItem('glad-nudge-dismissed', '1'); } catch { /* Storage is optional. */ } }
   };
   function dismissNudge() { if (nudge) nudge.hidden = true; nudgeStorage.set(); }
+  setupBookingForms((selection, context) => trackIntent('generate_lead', selection, context === 'booking_dialog' ? 'booking_dialog' : 'booking_page'));
   const pageForm = $('#booking-page-form');
   const describeSelection = (selection) => {
     const parts = [selection.package, VEHICLES[selection.vehicle]?.label].filter(Boolean);
     return parts.length
-      ? parts.join(' · ') + (selection.vehicle === 'truck-or-large-suv' ? '. Choose your exact vehicle type in the form below.' : '. Your selection is filled in below.') + ' We’ll text you to confirm.'
+      ? parts.join(' · ') + (selection.vehicle === 'truck-or-large-suv' ? '. Choose your exact vehicle size below.' : '. Your selection is filled in below.') + ' We’ll text you to confirm.'
       : 'Request a time. We’ll text you to confirm your appointment.';
   };
-  const updateExternalFormLinks = (selection) => {
-    document.querySelectorAll('[data-form-external]').forEach((link) => {
-      link.href = buildFormURL(selection, false);
-    });
-  };
   if (pageForm) {
-    const formURL = buildFormURL(pageSelection);
-    if (pageForm.getAttribute('src') !== formURL) pageForm.src = formURL;
+    applyBookingSelection(pageForm, pageSelection);
     $('#page-booking-selection').textContent = describeSelection(pageSelection);
-    updateExternalFormLinks(pageSelection);
     trackIntent('booking_form_view', pageSelection, 'booking_page');
   }
   refreshBookingLinks();
@@ -121,9 +116,8 @@ import { readSelection, buildFormURL, buildBookingPageURL, VEHICLES, PACKAGES } 
       if (pageForm) {
         event.preventDefault();
         if (link.dataset.book) {
-          pageForm.src = buildFormURL(selection);
+          applyBookingSelection(pageForm, selection);
           $('#page-booking-selection').textContent = describeSelection(selection);
-          updateExternalFormLinks(selection);
         }
         $('#request-form').scrollIntoView({ behavior: reduceMotion ? 'instant' : 'smooth' });
         return;
@@ -135,10 +129,7 @@ import { readSelection, buildFormURL, buildBookingPageURL, VEHICLES, PACKAGES } 
       closeMenu();
       returnFocus = link;
       $('#selected-package').textContent = describeSelection(selection);
-      const iframe = bookingModal.querySelector('iframe');
-      const formURL = buildFormURL(selection);
-      if (iframe.getAttribute('src') !== formURL) iframe.src = formURL;
-      updateExternalFormLinks(selection);
+      applyBookingSelection(bookingModal, selection);
       bookingModal.showModal();
     });
   });

@@ -8,7 +8,7 @@
   const disabled = !production || window['ga-disable-' + measurementId] === true;
   const events = new Set([
     'booking_start', 'booking_form_view', 'package_vehicle_selected',
-    'booking_form_external_click', 'call_click', 'text_click'
+    'booking_form_external_click', 'call_click', 'text_click', 'generate_lead'
   ]);
   const packages = ['In & Out', 'Interior Focused', 'Exterior Focused', 'Full Detail'];
   const vehicles = ['sedan', 'suv', 'large-suv', 'truck', 'truck-or-large-suv'];
