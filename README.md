@@ -2,10 +2,6 @@
 
 Static HTML, CSS, and JavaScript, ready for GitHub Pages. No build step or runtime dependencies.
 
-## Preview locally
-
-Run `python3 -m http.server 8765 --bind 127.0.0.1` from this folder, then visit http://127.0.0.1:8765.
-
 ## Included
 
 - Ferrari red buttons and accents, with a complementary forest blue hero headline.
