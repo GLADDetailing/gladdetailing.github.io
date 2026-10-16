@@ -7,7 +7,7 @@ Static HTML, CSS, and JavaScript, ready for GitHub Pages. No build step or runti
 - Ferrari red buttons and accents, with a complementary forest blue hero headline.
 - Membership prices explicitly labeled as monthly costs for monthly, bi-weekly, and weekly visits.
 - Eight-photo rotating gallery surrounding a centered Instagram invitation, with pause/play and reduced-motion support.
-- Twelve pages, including four dedicated Gainesville service pages, a direct booking page, and a custom 404 page.
+- Thirteen pages, including four dedicated Gainesville service pages, a direct booking page, a Membership Club page, and a custom 404 page.
 - Confirmed service areas and Monday–Saturday, 8 a.m.–7 p.m. appointment hours.
 - Unique titles/descriptions, production canonical URLs, Open Graph metadata, Organization/Service/Offer/Breadcrumb JSON-LD, robots.txt, and a current sitemap.
 - Responsive WebP image variants with explicit dimensions, lazy loading below the hero, and prioritized hero imagery.
@@ -22,7 +22,7 @@ Static HTML, CSS, and JavaScript, ready for GitHub Pages. No build step or runti
 
 ## Review and validation
 
-The approved redesign was reviewed earlier in Chrome. Per the owner's preference, the subsequent SEO iteration has not been browser-tested. Programmatic checks cover links and fragments across all 12 pages, unique metadata and canonical URLs, 11 JSON-LD graphs, confirmed hours/service areas, responsive image dimensions, the sitemap, JavaScript syntax, and 20 package/vehicle booking-prefill combinations plus invalid-input cases.
+The approved redesign was reviewed earlier in Chrome. Per the owner's preference, the subsequent SEO iteration has not been browser-tested. Programmatic checks cover links and fragments across all 13 pages, unique metadata and canonical URLs, 12 JSON-LD graphs, confirmed hours/service areas, responsive image dimensions, the sitemap, JavaScript syntax, and 20 package/vehicle booking-prefill combinations plus invalid-input cases.
 
 The four service pages and direct booking page are linked from the existing navigation, package cards, and footer. Home links use `/`; `/index.html` remains available with `/` as its canonical URL. No unsupported server redirects are assumed on GitHub Pages.
 
@@ -30,7 +30,7 @@ This source is prepared for the existing GitHub Pages site at https://gladdetail
 
 ## Analytics
 
-`analytics.js` loads before `app.js` on all 12 pages. It configures GA4 once, and sends only the approved lead-intent event categories and fields. It honors the standard Google Analytics opt-out flag, excludes arbitrary URL parameters from page URLs, disables advertising signals/personalization, and leaves local previews untracked. GA4 receipt, account-side custom dimensions, and key-event settings must be verified after publication.
+`analytics.js` loads before `app.js` on all 13 pages. It configures GA4 once, and sends only the approved lead-intent event categories and fields. It honors the standard Google Analytics opt-out flag, excludes arbitrary URL parameters from page URLs, disables advertising signals/personalization, and leaves local previews untracked. GA4 receipt, account-side custom dimensions, and key-event settings must be verified after publication.
 
 Isolated Node checks cover production-host routing, no preview requests, event payload filtering, duplicate initialization, opt-out behavior, booking acknowledgements, validation, and duplicate/uncertain-save handling. These tests do not contact Google or prove receipt in the GA4 property.
 
@@ -39,3 +39,9 @@ Isolated Node checks cover production-host routing, no preview requests, event p
 `booking-config.mjs` contains only the public Google Apps Script web-app URL. Google credentials and the Mac outreach scripts are never included in this repository. The receiver validates requests, uses the existing 15-column sheet layout, and only acknowledges a request after saving. The existing Mac sender sends the first introduction and marks it sent; customer replies are handled by Miguel. The Mac must be awake, online, and connected to its existing Messages setup for automatic outreach.
 
 Receiver checks include required text consent, allowed service/vehicle/area/day values, a form-session challenge, a honeypot, phone/global rate limits, spreadsheet formula escaping, exact schema checks, a save lock, and idempotent request IDs. Unknown save outcomes prompt contact by text rather than claiming success or creating a second row. Customer data is never sent in the analytics payload.
+
+## Membership Club
+
+`membership.html` contains dedicated membership pricing, confirmed loyalty benefits, and an application form. Shared navigation and footer links include Membership Club. Localhost submissions are explicitly preview-only: no sheet write, text, or live analytics event is produced. The membership connection targets its own private sheet and uses a separate receipt-only Mac worker. Applying never enrolls, charges, or approves the applicant. The owner reviewed the local preview and approved publication on October 16, 2026.
+
+The private membership receiver is deployed and verified with a cleaned-up diagnostic application; no test text was sent. The owner activated the separate once-per-minute Mac receipt LaunchAgent; successful runs and an empty pending queue were verified. Membership receipt delivery has not been tested with a real phone number. The ordinary booking sender is unchanged.

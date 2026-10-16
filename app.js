@@ -1,3 +1,4 @@
+import { setupMembershipClub } from './membership-form.mjs';
 import { setupBookingForms, applyBookingSelection } from './booking-form.mjs';
 import { readSelection, buildBookingPageURL, VEHICLES, PACKAGES } from './booking-utils.mjs';
 (() => {
@@ -28,6 +29,9 @@ import { readSelection, buildBookingPageURL, VEHICLES, PACKAGES } from './bookin
     if (element.closest('dialog')) return 'booking_dialog';
     return 'page_content';
   };
+  setupMembershipClub((event, parameters) => {
+    if (window.GLAD_ANALYTICS?.enabled) window.GLAD_ANALYTICS.trackEvent(event, { ...parameters, cta_location: 'membership_club' });
+  });
   const pageSelection = readSelection(location.search);
   const selectedOnPage = (packageName = '') => {
     const vehicleInput = $('input[name="vehicle"]:checked');
