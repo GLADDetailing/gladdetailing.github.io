@@ -1,16 +1,17 @@
-export const FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfcx6kZL6CQWi26hkuztpklaUUA11LxALfGJmJa9r0kpKqNxQ/viewform';
+export const FORM_URL =
+  'https://docs.google.com/forms/d/e/1FAIpQLSfcx6kZL6CQWi26hkuztpklaUUA11LxALfGJmJa9r0kpKqNxQ/viewform';
 export const PACKAGES = ['In & Out', 'Interior Focused', 'Exterior Focused', 'Full Detail'];
 export const VEHICLES = {
   sedan: { label: 'Sedan / coupe', formValue: 'Sedan/Coupe' },
   suv: { label: 'SUV (2 rows)', formValue: 'SUV (2 rows)' },
   'large-suv': { label: 'Large SUV (3 rows)', formValue: 'Large SUV (3 rows)' },
   truck: { label: 'Truck', formValue: 'Truck' },
-  'truck-or-large-suv': { label: 'Truck / large SUV', formValue: '' }
+  'truck-or-large-suv': { label: 'Truck / large SUV', formValue: '' },
 };
 export function normalizeSelection(selection = {}) {
   return {
     package: PACKAGES.includes(selection.package) ? selection.package : '',
-    vehicle: Object.hasOwn(VEHICLES, selection.vehicle) ? selection.vehicle : ''
+    vehicle: Object.hasOwn(VEHICLES, selection.vehicle) ? selection.vehicle : '',
   };
 }
 export function readSelection(search) {

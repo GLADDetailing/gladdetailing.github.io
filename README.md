@@ -2,6 +2,39 @@
 
 Static HTML, CSS, and JavaScript, ready for GitHub Pages. No build step or runtime dependencies.
 
+## Editing the website
+
+The source uses two-space indentation, readable HTML attributes, and one CSS declaration per line. HTML comments label the main page sections; CSS comments mark shared components and page-specific styles. Search for the visible section heading or the relevant CSS class to find what you want to edit.
+
+| What you want to change | Where to edit |
+| --- | --- |
+| Homepage text, photos, and sections | `index.html` |
+| Services and package cards | `packages.html` and the four `*-car-detailing-gainesville.html` / `in-and-out-detailing-gainesville.html` pages |
+| Membership Club copy and benefits | `membership.html` |
+| Gallery and Instagram invitation | `gallery.html` |
+| About pages | `about.html` and `about-me.html` |
+| Colors and fonts | The `:root` variables at the top of `styles.css` |
+| Spacing, layout, buttons, animations, and mobile styles | The labeled sections and `@media` blocks in `styles.css` |
+| Booking form fields and confirmation markup | `booking-form.mjs` — the form HTML is created here, not inside `book.html` |
+| Membership application fields and confirmation markup | `membership-form.mjs` |
+| Membership display prices and vehicle tiers | `CLUB_PRICES` and `CLUB_VEHICLES` in `membership-utils.mjs` |
+| Shared navigation and footer | The labeled header/footer blocks in each HTML page |
+| SEO titles and descriptions | The `<head>` of each HTML page |
+
+Keep CSS rules in their current order: later overrides and responsive rules depend on it. When editing navigation or footer links, update every page that uses them. For package prices, keep the HTML `data-prices` values, service-page text, and JSON-LD offers consistent. Membership price changes also need the matching Google receiver configuration updated; changing the display alone does not change the server-calculated application quote.
+
+Formatting is optional editing tooling; the website still runs directly from these static files. From this folder, install the formatter once and use:
+
+```sh
+npm install
+npm run format
+npm run format:check
+```
+
+`.prettierrc.json` stores the formatting rules, and `.editorconfig` defines indentation and line endings. An editor's Prettier integration can use the same configuration when you format a file. The `/* HTML */` comments in the form modules tell Prettier to format the HTML inside JavaScript template strings too.
+
+To preview with a local HTTP server, run `python3 -m http.server 8765` from this folder, then visit `http://127.0.0.1:8765/`. If that server is already running, use its existing address. Membership applications on localhost remain preview-only.
+
 ## Included
 
 - Ferrari red buttons and accents, with a complementary forest blue hero headline.

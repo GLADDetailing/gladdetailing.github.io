@@ -8,9 +8,11 @@ import { readSelection, buildBookingPageURL, VEHICLES, PACKAGES } from './bookin
   const trackIntent = (event, selection = {}, context = '') => {
     const parameters = {
       detail_package: PACKAGES.includes(selection.package) ? selection.package : 'unspecified',
-      vehicle_category: Object.hasOwn(VEHICLES, selection.vehicle) ? selection.vehicle : 'unspecified',
+      vehicle_category: Object.hasOwn(VEHICLES, selection.vehicle)
+        ? selection.vehicle
+        : 'unspecified',
       cta_location: context,
-      page_path: window.location.pathname
+      page_path: window.location.pathname,
     };
     if (window.GLAD_ANALYTICS?.enabled) {
       window.GLAD_ANALYTICS.trackEvent(event, parameters);
@@ -25,19 +27,23 @@ import { readSelection, buildBookingPageURL, VEHICLES, PACKAGES } from './bookin
     if (element.closest('.mobile-dock')) return 'mobile_bar';
     if (element.closest('.package-card')) return 'package_card';
     if (element.closest('.hero')) return 'hero';
-    if (element.closest('.service-landing, .service-quote, .local-coverage')) return 'service_content';
+    if (element.closest('.service-landing, .service-quote, .local-coverage'))
+      return 'service_content';
     if (element.closest('dialog')) return 'booking_dialog';
     return 'page_content';
   };
   setupMembershipClub((event, parameters) => {
-    if (window.GLAD_ANALYTICS?.enabled) window.GLAD_ANALYTICS.trackEvent(event, { ...parameters, cta_location: 'membership_club' });
+    if (window.GLAD_ANALYTICS?.enabled)
+      window.GLAD_ANALYTICS.trackEvent(event, { ...parameters, cta_location: 'membership_club' });
   });
   const pageSelection = readSelection(location.search);
   const selectedOnPage = (packageName = '') => {
     const vehicleInput = $('input[name="vehicle"]:checked');
     return {
       package: packageName || pageSelection.package,
-      vehicle: vehicleInput ? ['sedan', 'suv', 'truck-or-large-suv'][Number(vehicleInput.value)] : pageSelection.vehicle
+      vehicle: vehicleInput
+        ? ['sedan', 'suv', 'truck-or-large-suv'][Number(vehicleInput.value)]
+        : pageSelection.vehicle,
     };
   };
   const refreshBookingLinks = () => {
@@ -61,20 +67,30 @@ import { readSelection, buildBookingPageURL, VEHICLES, PACKAGES } from './bookin
   navigation?.addEventListener('click', (event) => {
     if (event.target.closest('a')) closeMenu();
   });
-  document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeMenu(); });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeMenu();
+  });
   window.matchMedia('(min-width: 761px)').addEventListener('change', closeMenu);
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if ('IntersectionObserver' in window && !reduceMotion) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
-      });
-    }, { threshold: 0.07 });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.07 },
+    );
     document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
     document.documentElement.classList.add('motion-ready');
   }
-  document.querySelectorAll('[data-year]').forEach((element) => { element.textContent = new Date().getFullYear(); });
+  document.querySelectorAll('[data-year]').forEach((element) => {
+    element.textContent = new Date().getFullYear();
+  });
 
   document.querySelectorAll('input[name="vehicle"]').forEach((input) => {
     input.addEventListener('change', () => {
@@ -93,16 +109,41 @@ import { readSelection, buildBookingPageURL, VEHICLES, PACKAGES } from './bookin
   let returnFocus;
   let engaged = false;
   const nudgeStorage = {
-    get() { try { return sessionStorage.getItem('glad-nudge-dismissed') === '1'; } catch { return false; } },
-    set() { try { sessionStorage.setItem('glad-nudge-dismissed', '1'); } catch { /* Storage is optional. */ } }
+    get() {
+      try {
+        return sessionStorage.getItem('glad-nudge-dismissed') === '1';
+      } catch {
+        return false;
+      }
+    },
+    set() {
+      try {
+        sessionStorage.setItem('glad-nudge-dismissed', '1');
+      } catch {
+        /* Storage is optional. */
+      }
+    },
   };
-  function dismissNudge() { if (nudge) nudge.hidden = true; nudgeStorage.set(); }
-  setupBookingForms((selection, context) => trackIntent('generate_lead', selection, context === 'booking_dialog' ? 'booking_dialog' : 'booking_page'));
+  function dismissNudge() {
+    if (nudge) nudge.hidden = true;
+    nudgeStorage.set();
+  }
+  setupBookingForms((selection, context) =>
+    trackIntent(
+      'generate_lead',
+      selection,
+      context === 'booking_dialog' ? 'booking_dialog' : 'booking_page',
+    ),
+  );
   const pageForm = $('#booking-page-form');
   const describeSelection = (selection) => {
     const parts = [selection.package, VEHICLES[selection.vehicle]?.label].filter(Boolean);
     return parts.length
-      ? parts.join(' · ') + (selection.vehicle === 'truck-or-large-suv' ? '. Choose your exact vehicle size below.' : '. Your selection is filled in below.') + ' We’ll text you to confirm.'
+      ? parts.join(' · ') +
+          (selection.vehicle === 'truck-or-large-suv'
+            ? '. Choose your exact vehicle size below.'
+            : '. Your selection is filled in below.') +
+          ' We’ll text you to confirm.'
       : 'Request a time. We’ll text you to confirm your appointment.';
   };
   if (pageForm) {
@@ -140,23 +181,38 @@ import { readSelection, buildBookingPageURL, VEHICLES, PACKAGES } from './bookin
   document.addEventListener('click', (event) => {
     const link = event.target.closest('a');
     if (!link) return;
-    if (link.getAttribute('href')?.startsWith('tel:')) trackIntent('call_click', {}, contextFor(link));
-    if (link.getAttribute('href')?.startsWith('sms:')) trackIntent('text_click', {}, contextFor(link));
-    if (link.hasAttribute('data-form-external')) trackIntent('booking_form_external_click', {}, contextFor(link));
+    if (link.getAttribute('href')?.startsWith('tel:'))
+      trackIntent('call_click', {}, contextFor(link));
+    if (link.getAttribute('href')?.startsWith('sms:'))
+      trackIntent('text_click', {}, contextFor(link));
+    if (link.hasAttribute('data-form-external'))
+      trackIntent('booking_form_external_click', {}, contextFor(link));
   });
-  function closeBooking() { bookingModal.close(); }
+  function closeBooking() {
+    bookingModal.close();
+  }
   $('.close-modal')?.addEventListener('click', closeBooking);
   bookingModal?.addEventListener('close', () => returnFocus?.focus({ preventScroll: true }));
   bookingModal?.addEventListener('click', (event) => {
     const rect = bookingModal.getBoundingClientRect();
-    if (event.target === bookingModal && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) closeBooking();
+    if (
+      event.target === bookingModal &&
+      (event.clientX < rect.left ||
+        event.clientX > rect.right ||
+        event.clientY < rect.top ||
+        event.clientY > rect.bottom)
+    )
+      closeBooking();
   });
 
   const photoModal = $('#photo-modal');
   let photoReturnFocus;
   document.querySelectorAll('[data-photo]').forEach((button) => {
     button.addEventListener('click', () => {
-      if (!photoModal?.showModal) { window.location.href = button.dataset.photo; return; }
+      if (!photoModal?.showModal) {
+        window.location.href = button.dataset.photo;
+        return;
+      }
       photoReturnFocus = button;
       photoModal.querySelector('img').src = button.dataset.photo;
       photoModal.querySelector('img').alt = button.dataset.caption;
@@ -168,7 +224,14 @@ import { readSelection, buildBookingPageURL, VEHICLES, PACKAGES } from './bookin
   photoModal?.addEventListener('close', () => photoReturnFocus?.focus({ preventScroll: true }));
   photoModal?.addEventListener('click', (event) => {
     const rect = photoModal.getBoundingClientRect();
-    if (event.target === photoModal && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) photoModal.close();
+    if (
+      event.target === photoModal &&
+      (event.clientX < rect.left ||
+        event.clientX > rect.right ||
+        event.clientY < rect.top ||
+        event.clientY > rect.bottom)
+    )
+      photoModal.close();
   });
 
   // Rotate real gallery photos around the stationary Instagram invitation.
@@ -178,7 +241,15 @@ import { readSelection, buildBookingPageURL, VEHICLES, PACKAGES } from './bookin
     const tiles = [...showcase.querySelectorAll('[data-photo]')];
     const photos = tiles.map((tile) => {
       const img = tile.querySelector('img');
-      return { src: tile.dataset.photo, caption: tile.dataset.caption, srcset: img.srcset, sizes: img.sizes, width: Number(img.getAttribute('width')), height: Number(img.getAttribute('height')), alt: img.alt };
+      return {
+        src: tile.dataset.photo,
+        caption: tile.dataset.caption,
+        srcset: img.srcset,
+        sizes: img.sizes,
+        width: Number(img.getAttribute('width')),
+        height: Number(img.getAttribute('height')),
+        alt: img.alt,
+      };
     });
     let motionEnabled = !reduceMotion;
     let offset = 0;
@@ -196,7 +267,13 @@ import { readSelection, buildBookingPageURL, VEHICLES, PACKAGES } from './bookin
       updateMotionControl();
     });
     window.setInterval(() => {
-      if (!motionEnabled || document.hidden || showcase.matches(':hover, :focus-within') || document.querySelector('dialog[open]')) return;
+      if (
+        !motionEnabled ||
+        document.hidden ||
+        showcase.matches(':hover, :focus-within') ||
+        document.querySelector('dialog[open]')
+      )
+        return;
       const rect = showcase.getBoundingClientRect();
       if (rect.bottom < 0 || rect.top > window.innerHeight) return;
       offset = (offset + 1) % photos.length;
@@ -207,7 +284,11 @@ import { readSelection, buildBookingPageURL, VEHICLES, PACKAGES } from './bookin
         preload.sizes = next.sizes;
         preload.srcset = next.srcset;
         preload.src = next.src;
-        try { await preload.decode(); } catch { return; }
+        try {
+          await preload.decode();
+        } catch {
+          return;
+        }
         if (!motionEnabled || currentGeneration !== generation) return;
         tile.classList.add('is-changing');
         window.setTimeout(() => {
@@ -232,13 +313,30 @@ import { readSelection, buildBookingPageURL, VEHICLES, PACKAGES } from './bookin
   $('.nudge-close')?.addEventListener('click', dismissNudge);
   // One quiet prompt per browser session, after the visitor has explored the page.
   let nudgeReady = false;
-  window.setTimeout(() => { nudgeReady = true; }, 35000);
+  window.setTimeout(() => {
+    nudgeReady = true;
+  }, 35000);
   const offerHelp = () => {
-    if (pageForm || !nudgeReady || engaged || nudgeStorage.get() || document.querySelector('dialog[open]')) return;
-    const progress = window.scrollY / Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    if (
+      pageForm ||
+      !nudgeReady ||
+      engaged ||
+      nudgeStorage.get() ||
+      document.querySelector('dialog[open]')
+    )
+      return;
+    const progress =
+      window.scrollY / Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
     const booking = $('#booking');
-    const bookingVisible = booking && booking.getBoundingClientRect().top < window.innerHeight && booking.getBoundingClientRect().bottom > 0;
-    if (progress > 0.3 && !bookingVisible) { nudge.hidden = false; nudgeReady = false; window.removeEventListener('scroll', offerHelp); }
+    const bookingVisible =
+      booking &&
+      booking.getBoundingClientRect().top < window.innerHeight &&
+      booking.getBoundingClientRect().bottom > 0;
+    if (progress > 0.3 && !bookingVisible) {
+      nudge.hidden = false;
+      nudgeReady = false;
+      window.removeEventListener('scroll', offerHelp);
+    }
   };
   window.addEventListener('scroll', offerHelp, { passive: true });
   // Direct booking links remain useful when shared or opened from an older page.

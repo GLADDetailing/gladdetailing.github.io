@@ -1,0 +1,12 @@
+{
+  "name": "glad-detailing-website",
+  "private": true,
+  "description": "Static GLAD Detailing website. Formatting tools are for editing only; no build step is required.",
+  "scripts": {
+    "format": "prettier --write \"*.{html,css,js,mjs,json}\"",
+    "format:check": "prettier --check \"*.{html,css,js,mjs,json}\""
+  },
+  "devDependencies": {
+    "prettier": "3.9.10"
+  }
+}
