@@ -215,6 +215,9 @@ input:focus-visible + span {
   position: relative;
   padding: 8px 0;
 }
+.header nav a [href="memberhip.html"]{
+  color:var(--club-gold, #d6bd8a);
+}
 .header nav a:after {
   position: absolute;
   bottom: 0;
@@ -774,7 +777,7 @@ details[open] summary > span {
   position: absolute;
   bottom: 25px;
   left: 25px;
-  color: white;
+   f: white;
   font-size: 10px;
   letter-spacing: 0.12em;
   background: var(--ink);
