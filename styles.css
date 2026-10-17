@@ -218,6 +218,9 @@ input:focus-visible + span {
 .header nav a[href="membership.html"] {
   color: var(#d6bd8a);
 }
+.header nav a[href="membership.html"]::after {
+  background: var(--club-gold, #d6bd8a);
+}
 .header nav a:after {
   position: absolute;
   bottom: 0;
