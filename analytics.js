@@ -62,6 +62,13 @@
     return;
   }
 
+  // Load GTM only on the live site; local builds and previews stay excluded.
+  window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+  const gtmScript = document.createElement('script');
+  gtmScript.async = true;
+  gtmScript.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-PPQGLS7B';
+  document.head.appendChild(gtmScript);
+
   window.gtag =
     window.gtag ||
     function () {
