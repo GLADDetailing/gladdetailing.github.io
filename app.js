@@ -128,13 +128,16 @@ import { readSelection, buildBookingPageURL, VEHICLES, PACKAGES } from './bookin
     if (nudge) nudge.hidden = true;
     nudgeStorage.set();
   }
-  setupBookingForms((selection, context) =>
+  setupBookingForms((selection, context) => {
     trackIntent(
       'generate_lead',
       selection,
       context === 'booking_dialog' ? 'booking_dialog' : 'booking_page',
-    ),
-  );
+    );
+    // Fire Meta's Lead event only after the booking request is confirmed as saved.
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'glad_booking_request_saved' });
+  });
   const pageForm = $('#booking-page-form');
   const describeSelection = (selection) => {
     const parts = [selection.package, VEHICLES[selection.vehicle]?.label].filter(Boolean);
