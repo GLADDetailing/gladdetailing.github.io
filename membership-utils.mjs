@@ -1,8 +1,8 @@
 export const CLUB_PLANS = { monthly: 'Monthly', biweekly: 'Bi-weekly', weekly: 'Weekly' };
 export const CLUB_PRICES = {
-  monthly: [60, 75, 100],
-  biweekly: [100, 125, 150],
-  weekly: [200, 240, 280],
+  monthly: [70, 80, 100],
+  biweekly: [130, 150, 180],
+  weekly: [240, 280, 320],
 };
 export const CLUB_VEHICLES = {
   sedan: { label: 'Sedan / coupe', tier: 0 },
