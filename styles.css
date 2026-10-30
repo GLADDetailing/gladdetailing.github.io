@@ -3608,3 +3608,18 @@ dialog[open] {
     padding: 22px;
   }
 }
+
+/* Make service guidance and author attribution easy to find and read. */
+.service-explainer p a,
+.included-section p a,
+.local-coverage p a,
+.faq-list p a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.editorial-content .editorial-byline {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0 0 24px;
+}
