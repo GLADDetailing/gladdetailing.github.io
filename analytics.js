@@ -40,6 +40,7 @@
     '/about.html',
     '/about-me.html',
     '/privacy.html',
+    '/terms.html',
     '/book.html',
     '/membership.html',
     '/in-and-out-detailing-gainesville.html',

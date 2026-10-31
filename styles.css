@@ -215,10 +215,10 @@ input:focus-visible + span {
   position: relative;
   padding: 8px 0;
 }
-.header nav a[href="membership.html"] {
+.header nav a[href='membership.html'] {
   color: #d6bd8a;
 }
-.header nav a[href="membership.html"]::after {
+.header nav a[href='membership.html']::after {
   background: #d6bd8a;
 }
 .header nav a:after {
@@ -780,7 +780,7 @@ details[open] summary > span {
   position: absolute;
   bottom: 25px;
   left: 25px;
-   f: white;
+  f: white;
   font-size: 10px;
   letter-spacing: 0.12em;
   background: var(--ink);
@@ -917,6 +917,7 @@ details[open] summary > span {
   border-top: 1px solid #ffffff25;
   padding-top: 22px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: 25px;
   font-size: 10px;
@@ -924,7 +925,8 @@ details[open] summary > span {
 }
 .footer-bottom > div {
   display: flex;
-  gap: 24px;
+  flex-wrap: wrap;
+  gap: 12px 24px;
 }
 .footer a:hover {
   color: var(--red);
@@ -1048,12 +1050,18 @@ details[open] summary > span {
   font-size: 55px;
   margin: 20px 0 35px;
 }
+.legal h2 {
+  font-size: clamp(24px, 3vw, 32px);
+  line-height: 1.3;
+  margin-top: 36px;
+}
 .legal p {
   margin: 20px 0;
   font-size: 14px;
 }
 .legal a {
   text-decoration: underline;
+  overflow-wrap: anywhere;
 }
 
 /* Booking dialog */
@@ -3515,7 +3523,6 @@ dialog[open] {
     animation: none;
   }
 }
-
 
 /* Editorial pages and practical car-care articles */
 .editorial-page {
