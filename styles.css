@@ -3667,3 +3667,26 @@ dialog[open] {
   color: var(--muted);
   margin: 0 0 24px;
 }
+
+/* Real-job comparison on the interior service page. */
+.detail-case { border-top: 1px solid var(--line); }
+.detail-case h2 { max-width: 850px; font-size: clamp(30px, 3.6vw, 48px); }
+.detail-case-intro { max-width: 820px; font-size: 18px; }
+.detail-case-byline, .detail-case-note { font-size: 14px; color: var(--muted); }
+.detail-case-byline a { text-decoration: underline; text-underline-offset: 3px; }
+.detail-case > h3 { margin-top: 32px; font-size: 23px; }
+.detail-case-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; max-width: 1000px; }
+.detail-case-pair figure { margin: 0; min-width: 0; }
+.detail-case-pair figcaption { padding: 10px 0; font-size: 14px; }
+.detail-case-pair figcaption strong { display: inline-block; padding: 3px 10px; margin-right: 5px; background: var(--ink); color: var(--paper); border-radius: 4px; }
+.detail-case-pair img { width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: contain; background: #e8e8e1; border-radius: 8px; }
+.detail-case-story { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 30px 0; max-width: 1100px; }
+.detail-case-story h3 { font-size: 23px; }
+.detail-case-story ul { padding-left: 22px; }
+.detail-case-story li { margin-bottom: 10px; }
+.detail-case > p { max-width: 820px; }
+@media (max-width: 600px) {
+  .detail-case-pair, .detail-case-story { grid-template-columns: 1fr; gap: 20px; }
+  .detail-case-intro { font-size: 16px; }
+  .detail-case-story { margin: 24px 0; }
+}
