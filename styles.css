@@ -211,6 +211,9 @@ input:focus-visible + span {
   font-size: 13px;
   font-weight: 600;
 }
+.header nav .nav-group {
+  display: contents;
+}
 .header nav a {
   position: relative;
   padding: 8px 0;
@@ -234,6 +237,40 @@ input:focus-visible + span {
 .header nav a:hover:after,
 .header nav a[aria-current]:after {
   width: 100%;
+}
+
+/* Equal side columns keep Membership Club at the center of the desktop header. */
+@media (min-width: 1201px) {
+  .header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    gap: 24px;
+  }
+  .header > .brand {
+    justify-self: start;
+  }
+  .header > .nav-book {
+    justify-self: end;
+    white-space: nowrap;
+  }
+  .header nav {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: clamp(18px, 1.6vw, 33px);
+  }
+  .header nav .nav-group {
+    display: flex;
+    align-items: center;
+    gap: inherit;
+    white-space: nowrap;
+  }
+  .header nav .nav-group:first-child {
+    justify-content: flex-end;
+  }
+  .header nav .nav-group:last-child {
+    justify-content: flex-start;
+  }
 }
 
 /* Buttons and hover effects */
